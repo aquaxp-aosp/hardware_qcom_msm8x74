@@ -13,3 +13,5 @@
 # limitations under the License.
 
 PRODUCT_VENDOR_KERNEL_HEADERS := hardware/qcom/msm8x74/kernel-headers
+
+PRODUCT_PACKAGES += hwcomposer.msm8x74
