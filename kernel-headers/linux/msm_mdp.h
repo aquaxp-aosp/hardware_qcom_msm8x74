@@ -591,27 +591,37 @@ enum {
  metadata_op_vic,
  metadata_op_wb_format,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ metadata_op_get_caps,
  metadata_op_max
 };
 struct mdp_blend_cfg {
- uint32_t is_premultiplied;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ uint32_t is_premultiplied;
 };
 struct mdp_mixer_cfg {
  uint32_t writeback_format;
- uint32_t alpha;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ uint32_t alpha;
 };
+struct mdss_hw_caps {
+ uint32_t mdp_rev;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ uint8_t rgb_pipes;
+ uint8_t vig_pipes;
+ uint8_t dma_pipes;
+};
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct msmfb_metadata {
  uint32_t op;
  uint32_t flags;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  union {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  struct mdp_blend_cfg blend_cfg;
  struct mdp_mixer_cfg mixer_cfg;
  uint32_t panel_frame_rate;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint32_t video_info_code;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ struct mdss_hw_caps caps;
  } data;
 };
 #define MDP_MAX_FENCE_FD 10
@@ -663,4 +673,3 @@ enum {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 #endif
-
