@@ -15,12 +15,3 @@
 PRODUCT_VENDOR_KERNEL_HEADERS := hardware/qcom/msm8x74/kernel-headers
 
 PRODUCT_PACKAGES += hwcomposer.msm8974
-
-#media
-PRODUCT_PACKAGES += \
-		libstagefrighthw \
-		libc2dcolorconvert \
-		libOmxCore \
-		libOmxVenc \
-		libOmxVdec
-
