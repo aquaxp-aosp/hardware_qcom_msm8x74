@@ -41,60 +41,66 @@
 #define MSM_GMN_IOCTL_HW_CMDS   _IOW(MSM_GMN_IOCTL_MAGIC, 14, struct msm_gemini_hw_cmds *)
 #define MSM_GMN_IOCTL_TEST_DUMP_REGION   _IOW(MSM_GMN_IOCTL_MAGIC, 15, unsigned long)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define MSM_GMN_IOCTL_SET_MODE   _IOW(MSM_GMN_IOCTL_MAGIC, 16, enum msm_gmn_out_mode)
 #define MSM_GEMINI_MODE_REALTIME_ENCODE 0
 #define MSM_GEMINI_MODE_OFFLINE_ENCODE 1
 #define MSM_GEMINI_MODE_REALTIME_ROTATION 2
-#define MSM_GEMINI_MODE_OFFLINE_ROTATION 3
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define MSM_GEMINI_MODE_OFFLINE_ROTATION 3
+enum msm_gmn_out_mode {
+ MSM_GMN_OUTMODE_FRAGMENTED,
+ MSM_GMN_OUTMODE_SINGLE
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+};
 struct msm_gemini_ctrl_cmd {
  uint32_t type;
  uint32_t len;
- void *value;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ void *value;
 };
 #define MSM_GEMINI_EVT_RESET 0
 #define MSM_GEMINI_EVT_FRAMEDONE 1
-#define MSM_GEMINI_EVT_ERR 2
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define MSM_GEMINI_EVT_ERR 2
 struct msm_gemini_buf {
  uint32_t type;
  int fd;
- void *vaddr;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ void *vaddr;
  uint32_t y_off;
  uint32_t y_len;
  uint32_t framedone_len;
- uint32_t cbcr_off;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ uint32_t cbcr_off;
  uint32_t cbcr_len;
  uint32_t num_of_mcu_rows;
  uint32_t offset;
-};
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+};
 #define MSM_GEMINI_HW_CMD_TYPE_READ 0
 #define MSM_GEMINI_HW_CMD_TYPE_WRITE 1
 #define MSM_GEMINI_HW_CMD_TYPE_WRITE_OR 2
-#define MSM_GEMINI_HW_CMD_TYPE_UWAIT 3
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define MSM_GEMINI_HW_CMD_TYPE_UWAIT 3
 #define MSM_GEMINI_HW_CMD_TYPE_MWAIT 4
 #define MSM_GEMINI_HW_CMD_TYPE_MDELAY 5
 #define MSM_GEMINI_HW_CMD_TYPE_UDELAY 6
-struct msm_gemini_hw_cmd {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+struct msm_gemini_hw_cmd {
  uint32_t type:4;
  uint32_t n:12;
  uint32_t offset:16;
- uint32_t mask;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ uint32_t mask;
  union {
  uint32_t data;
  uint32_t *pdata;
- };
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ };
 };
 struct msm_gemini_hw_cmds {
  uint32_t m;
- struct msm_gemini_hw_cmd hw_cmd[1];
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ struct msm_gemini_hw_cmd hw_cmd[1];
 };
 #endif
