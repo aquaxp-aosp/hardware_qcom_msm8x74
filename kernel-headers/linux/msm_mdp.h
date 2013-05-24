@@ -724,7 +724,7 @@ struct msmfb_metadata {
  struct mdss_hw_caps caps;
  } data;
 };
-#define MDP_MAX_FENCE_FD 10
+#define MDP_MAX_FENCE_FD 32
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define MDP_BUF_SYNC_FLAG_WAIT 1
 struct mdp_buf_sync {

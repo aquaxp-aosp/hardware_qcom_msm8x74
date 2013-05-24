@@ -511,7 +511,7 @@ struct kgsl_perfcounter_read_group {
  unsigned int groupid;
  unsigned int countable;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- uint64_t value;
+ unsigned long long value;
 };
 struct kgsl_perfcounter_read {
  struct kgsl_perfcounter_read_group *reads;
