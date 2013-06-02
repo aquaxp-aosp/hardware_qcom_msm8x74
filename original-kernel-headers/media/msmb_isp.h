@@ -64,6 +64,7 @@ enum msm_vfe_frame_skip_pattern {
 	EVERY_8FRAME,
 	EVERY_16FRAME,
 	EVERY_32FRAME,
+	SKIP_ALL,
 	MAX_SKIP,
 };
 
@@ -334,6 +335,8 @@ struct msm_isp_event_data {
 	 *which use monotonic clock
 	 */
 	struct timeval timestamp;
+    /* Monotonic timestamp since bootup */
+    struct timeval mono_timestamp;
 	/* if pix is a src frame_id is from camif */
 	uint32_t frame_id;
 	union {
