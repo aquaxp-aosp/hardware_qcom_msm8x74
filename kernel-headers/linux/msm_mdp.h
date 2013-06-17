@@ -446,157 +446,192 @@ struct mdp_histogram {
 };
 enum {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ DISPLAY_MISR_EDP,
+ DISPLAY_MISR_DSI0,
+ DISPLAY_MISR_DSI1,
+ DISPLAY_MISR_HDMI,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ DISPLAY_MISR_LCDC,
+ DISPLAY_MISR_ATV,
+ DISPLAY_MISR_DSI_CMD,
+ DISPLAY_MISR_MAX
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+};
+enum {
+ MISR_OP_NONE,
+ MISR_OP_SFM,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ MISR_OP_MFM,
+ MISR_OP_BM,
+ MISR_OP_MAX
+};
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+struct mdp_misr {
+ uint32_t block_id;
+ uint32_t frame_count;
+ uint32_t crc_op_mode;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ uint32_t crc_value[32];
+};
+enum {
  MDP_BLOCK_RESERVED = 0,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  MDP_BLOCK_OVERLAY_0,
  MDP_BLOCK_OVERLAY_1,
  MDP_BLOCK_VG_1,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  MDP_BLOCK_VG_2,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  MDP_BLOCK_RGB_1,
  MDP_BLOCK_RGB_2,
  MDP_BLOCK_DMA_P,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  MDP_BLOCK_DMA_S,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  MDP_BLOCK_DMA_E,
  MDP_BLOCK_OVERLAY_2,
  MDP_LOGICAL_BLOCK_DISP_0 = 0x10,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  MDP_LOGICAL_BLOCK_DISP_1,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  MDP_LOGICAL_BLOCK_DISP_2,
  MDP_BLOCK_MAX,
 };
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct mdp_histogram_start_req {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint32_t block;
  uint8_t frame_cnt;
  uint8_t bit_mask;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint16_t num_bins;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 struct mdp_histogram_data {
  uint32_t block;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint32_t bin_cnt;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint32_t *c0;
  uint32_t *c1;
  uint32_t *c2;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint32_t *extra_info;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 struct mdp_pcc_coeff {
  uint32_t c, r, g, b, rr, gg, bb, rg, gb, rb, rgb_0, rgb_1;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct mdp_pcc_cfg_data {
  uint32_t block;
  uint32_t ops;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  struct mdp_pcc_coeff r, g, b;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 #define MDP_GAMUT_TABLE_NUM 8
 enum {
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  mdp_lut_igc,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  mdp_lut_pgc,
  mdp_lut_hist,
  mdp_lut_max,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct mdp_ar_gc_lut_data {
  uint32_t x_start;
  uint32_t slope;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint32_t offset;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 struct mdp_pgc_lut_data {
  uint32_t block;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint32_t flags;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint8_t num_r_stages;
  uint8_t num_g_stages;
  uint8_t num_b_stages;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  struct mdp_ar_gc_lut_data *r_data;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  struct mdp_ar_gc_lut_data *g_data;
  struct mdp_ar_gc_lut_data *b_data;
 };
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct mdp_lut_cfg_data {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint32_t lut_type;
  union {
  struct mdp_igc_lut_data igc_lut_data;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  struct mdp_pgc_lut_data pgc_lut_data;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  struct mdp_hist_lut_data hist_lut_data;
  } data;
 };
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct mdp_bl_scale_data {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint32_t min_lvl;
  uint32_t scale;
 };
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct mdp_pa_cfg_data {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint32_t block;
  struct mdp_pa_cfg pa_data;
 };
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct mdp_dither_cfg_data {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint32_t block;
  uint32_t flags;
  uint32_t g_y_depth;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint32_t r_cr_depth;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint32_t b_cb_depth;
 };
 struct mdp_gamut_cfg_data {
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint32_t block;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint32_t flags;
  uint32_t gamut_first;
  uint32_t tbl_size[MDP_GAMUT_TABLE_NUM];
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint16_t *r_tbl[MDP_GAMUT_TABLE_NUM];
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint16_t *g_tbl[MDP_GAMUT_TABLE_NUM];
  uint16_t *b_tbl[MDP_GAMUT_TABLE_NUM];
 };
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct mdp_calib_config_data {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint32_t ops;
  uint32_t addr;
  uint32_t data;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define MDSS_MAX_BL_BRIGHTNESS 255
+#define AD_BL_LIN_LEN (MDSS_MAX_BL_BRIGHTNESS + 1)
 #define MDSS_AD_MODE_AUTO_BL 0x0
 #define MDSS_AD_MODE_AUTO_STR 0x1
-#define MDSS_AD_MODE_TARG_STR 0x3
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define MDSS_AD_MODE_TARG_STR 0x3
 #define MDSS_AD_MODE_MAN_STR 0x7
 #define MDP_PP_AD_INIT 0x10
 #define MDP_PP_AD_CFG 0x20
-struct mdss_ad_init {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+struct mdss_ad_init {
  uint32_t asym_lut[33];
  uint32_t color_corr_lut[33];
  uint8_t i_control[2];
- uint16_t black_lvl;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ uint16_t black_lvl;
  uint16_t white_lvl;
  uint8_t var;
  uint8_t limit_ampl;
- uint8_t i_dither;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ uint8_t i_dither;
  uint8_t slope_max;
  uint8_t slope_min;
  uint8_t dither_ctl;
- uint8_t format;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ uint8_t format;
  uint8_t auto_size;
  uint16_t frame_w;
  uint16_t frame_h;
- uint8_t logo_v;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ uint8_t logo_v;
  uint8_t logo_h;
+ uint32_t bl_lin_len;
+ uint32_t *bl_lin;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ uint32_t *bl_lin_inv;
 };
 struct mdss_ad_cfg {
  uint32_t mode;
@@ -633,6 +668,11 @@ struct mdss_ad_input {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint32_t output;
 };
+struct mdss_calib_cfg {
+ uint32_t ops;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ uint32_t calib_mask;
+};
 enum {
  mdp_op_pcc_cfg,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
@@ -648,73 +688,78 @@ enum {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  mdp_op_ad_cfg,
  mdp_op_ad_input,
+ mdp_op_calib_mode,
  mdp_op_max,
-};
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+};
 enum {
  WB_FORMAT_NV12,
  WB_FORMAT_RGB_565,
- WB_FORMAT_RGB_888,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ WB_FORMAT_RGB_888,
  WB_FORMAT_xRGB_8888,
  WB_FORMAT_ARGB_8888,
  WB_FORMAT_ARGB_8888_INPUT_ALPHA
-};
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+};
 struct msmfb_mdp_pp {
  uint32_t op;
  union {
- struct mdp_pcc_cfg_data pcc_cfg_data;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ struct mdp_pcc_cfg_data pcc_cfg_data;
  struct mdp_csc_cfg_data csc_cfg_data;
  struct mdp_lut_cfg_data lut_cfg_data;
  struct mdp_qseed_cfg_data qseed_cfg_data;
- struct mdp_bl_scale_data bl_scale_data;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ struct mdp_bl_scale_data bl_scale_data;
  struct mdp_pa_cfg_data pa_cfg_data;
  struct mdp_dither_cfg_data dither_cfg_data;
  struct mdp_gamut_cfg_data gamut_cfg_data;
- struct mdp_calib_config_data calib_cfg;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ struct mdp_calib_config_data calib_cfg;
  struct mdss_ad_init_cfg ad_init_cfg;
+ struct mdss_calib_cfg mdss_calib_cfg;
  struct mdss_ad_input ad_input;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  } data;
 };
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define FB_METADATA_VIDEO_INFO_CODE_SUPPORT 1
 enum {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  metadata_op_none,
  metadata_op_base_blend,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  metadata_op_frame_rate,
  metadata_op_vic,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  metadata_op_wb_format,
  metadata_op_get_caps,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ metadata_op_crc,
  metadata_op_max
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 struct mdp_blend_cfg {
  uint32_t is_premultiplied;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct mdp_mixer_cfg {
  uint32_t writeback_format;
  uint32_t alpha;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct mdss_hw_caps {
  uint32_t mdp_rev;
  uint8_t rgb_pipes;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint8_t vig_pipes;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint8_t dma_pipes;
  uint32_t features;
 };
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct msmfb_metadata {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint32_t op;
  uint32_t flags;
  union {
+ struct mdp_misr misr_request;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  struct mdp_blend_cfg blend_cfg;
  struct mdp_mixer_cfg mixer_cfg;
