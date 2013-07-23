@@ -214,15 +214,16 @@ struct msm_vpe_frame_info_t {
 #define VIDIOC_MSM_VPE_GET_INST_INFO   _IOWR('V', BASE_VIDIOC_PRIVATE + 11, struct msm_camera_v4l2_ioctl_t)
 #define VIDIOC_MSM_VPE_ENQUEUE_STREAM_BUFF_INFO   _IOWR('V', BASE_VIDIOC_PRIVATE + 12, struct msm_camera_v4l2_ioctl_t)
 #define VIDIOC_MSM_VPE_DEQUEUE_STREAM_BUFF_INFO   _IOWR('V', BASE_VIDIOC_PRIVATE + 13, struct msm_camera_v4l2_ioctl_t)
-#define V4L2_EVENT_CPP_FRAME_DONE (V4L2_EVENT_PRIVATE_START + 0)
+#define VIDIOC_MSM_CPP_SEND_BUF_DONE   _IOWR('V', BASE_VIDIOC_PRIVATE + 14, struct msm_camera_v4l2_ioctl_t)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define V4L2_EVENT_CPP_FRAME_DONE (V4L2_EVENT_PRIVATE_START + 0)
 #define V4L2_EVENT_VPE_FRAME_DONE (V4L2_EVENT_PRIVATE_START + 1)
 struct msm_camera_v4l2_ioctl_t {
  uint32_t id;
- uint32_t len;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ uint32_t len;
  int32_t trans_code;
  void __user *ioctl_ptr;
 };
-#endif
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#endif

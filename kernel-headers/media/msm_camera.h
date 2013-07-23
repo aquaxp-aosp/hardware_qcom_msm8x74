@@ -2172,4 +2172,3 @@ struct msm_ver_num_info {
 #define SET_VIDEO_INST_IDX(handle, data)   (handle |= (0x1 << 7) | (data & 0x7F))
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #endif
-

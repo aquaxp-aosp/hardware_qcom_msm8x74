@@ -409,4 +409,3 @@ struct msm_frame_info {
  uint32_t path;
 };
 #endif
-

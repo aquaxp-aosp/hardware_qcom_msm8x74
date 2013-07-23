@@ -104,4 +104,3 @@ struct msm_jpeg_hw_cmds {
  struct msm_jpeg_hw_cmd hw_cmd[1];
 };
 #endif
-

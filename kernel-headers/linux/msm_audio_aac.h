@@ -79,4 +79,3 @@ struct msm_audio_aac_enc_config {
  uint32_t stream_format;
 };
 #endif
-
