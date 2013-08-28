@@ -126,6 +126,7 @@ enum {
 	MDP_BGR_888,      /* BGR 888 */
 	MDP_Y_CBCR_H2V2_VENUS,
 	MDP_BGRX_8888,   /* BGRX 8888 */
+	MDP_YCBYCR_H2V1,  /* YCbYCr interleave */
 	MDP_IMGTYPE_LIMIT,
 	MDP_RGB_BORDERFILL,	/* border fill pipe */
 	MDP_FB_FORMAT = MDP_IMGTYPE2_START,    /* framebuffer format */
@@ -147,6 +148,7 @@ enum {
 
 #define MDSS_MDP_ROT_ONLY		0x80
 #define MDSS_MDP_RIGHT_MIXER		0x100
+#define MDSS_MDP_DUAL_PIPE		0x200
 
 /* mdp_blit_req flag values */
 #define MDP_ROT_NOP 0
@@ -829,6 +831,7 @@ struct msmfb_metadata {
 struct mdp_buf_sync {
 	uint32_t flags;
 	uint32_t acq_fen_fd_cnt;
+	uint32_t session_id;
 	int *acq_fen_fd;
 	int *rel_fen_fd;
 };
