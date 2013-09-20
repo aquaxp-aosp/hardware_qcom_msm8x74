@@ -102,291 +102,326 @@ enum msm_sensor_power_seq_gpio_t {
  SENSOR_GPIO_VIO,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  SENSOR_GPIO_VCM,
+ SENSOR_GPIO_OIS_LDO_EN,
+ SENSOR_GPIO_OIS_RESET,
  SENSOR_GPIO_MAX,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 enum msm_camera_vreg_name_t {
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  CAM_VDIG,
  CAM_VIO,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  CAM_VANA,
  CAM_VAF,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  CAM_VREG_MAX,
 };
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 enum msm_sensor_resolution_t {
  MSM_SENSOR_RES_FULL,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  MSM_SENSOR_RES_QTR,
  MSM_SENSOR_RES_2,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  MSM_SENSOR_RES_3,
  MSM_SENSOR_RES_4,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  MSM_SENSOR_RES_5,
  MSM_SENSOR_RES_6,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  MSM_SENSOR_RES_7,
  MSM_SENSOR_INVALID_RES,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 enum sensor_sub_module_t {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  SUB_MODULE_SENSOR,
  SUB_MODULE_CHROMATIX,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  SUB_MODULE_ACTUATOR,
  SUB_MODULE_EEPROM,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  SUB_MODULE_LED_FLASH,
  SUB_MODULE_STROBE_FLASH,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  SUB_MODULE_CSID,
  SUB_MODULE_CSID_3D,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  SUB_MODULE_CSIPHY,
  SUB_MODULE_CSIPHY_3D,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  SUB_MODULE_MAX,
 };
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 enum csid_cfg_type_t {
  CSID_INIT,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  CSID_CFG,
  CSID_RELEASE,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 enum csiphy_cfg_type_t {
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  CSIPHY_INIT,
  CSIPHY_CFG,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  CSIPHY_RELEASE,
 };
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 enum camera_vreg_type {
  REG_LDO,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  REG_VS,
  REG_GPIO,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 struct msm_sensor_power_setting {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  enum msm_sensor_power_seq_type_t seq_type;
  uint16_t seq_val;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  long config_val;
  uint16_t delay;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  void *data[10];
 };
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct msm_sensor_power_setting_array {
  struct msm_sensor_power_setting *power_setting;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint16_t size;
 };
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct msm_sensor_id_info_t {
  uint16_t sensor_id_reg_addr;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint16_t sensor_id;
 };
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct msm_camera_sensor_slave_info {
  uint16_t slave_addr;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  enum msm_camera_i2c_reg_addr_type addr_type;
  struct msm_sensor_id_info_t sensor_id_info;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  struct msm_sensor_power_setting_array power_setting_array;
 };
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct msm_camera_i2c_reg_array {
  uint16_t reg_addr;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint16_t reg_data;
 };
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct msm_camera_i2c_reg_setting {
  struct msm_camera_i2c_reg_array *reg_setting;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint16_t size;
  enum msm_camera_i2c_reg_addr_type addr_type;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  enum msm_camera_i2c_data_type data_type;
  uint16_t delay;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 struct msm_camera_i2c_seq_reg_array {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint16_t reg_addr;
  uint8_t reg_data[I2C_SEQ_REG_DATA_MAX];
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint16_t reg_data_size;
 };
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct msm_camera_i2c_seq_reg_setting {
  struct msm_camera_i2c_seq_reg_array *reg_setting;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint16_t size;
  enum msm_camera_i2c_reg_addr_type addr_type;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint16_t delay;
 };
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct msm_camera_i2c_array_write_config {
  struct msm_camera_i2c_reg_setting conf_array;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint16_t slave_addr;
 };
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct msm_camera_i2c_read_config {
  uint16_t slave_addr;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint16_t reg_addr;
  enum msm_camera_i2c_data_type data_type;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint16_t *data;
 };
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct msm_camera_csid_vc_cfg {
  uint8_t cid;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint8_t dt;
  uint8_t decode_format;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 struct msm_camera_csid_lut_params {
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint8_t num_cid;
  struct msm_camera_csid_vc_cfg *vc_cfg[MAX_CID];
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 struct msm_camera_csid_params {
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint8_t lane_cnt;
  uint16_t lane_assign;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint8_t phy_sel;
  struct msm_camera_csid_lut_params lut_params;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 struct msm_camera_csiphy_params {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint8_t lane_cnt;
  uint8_t settle_cnt;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint16_t lane_mask;
  uint8_t combo_mode;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint8_t csid_core;
 };
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct msm_camera_csi2_params {
  struct msm_camera_csid_params csid_params;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  struct msm_camera_csiphy_params csiphy_params;
 };
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct msm_camera_csi_lane_params {
  uint16_t csi_lane_assign;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint16_t csi_lane_mask;
 };
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct csi_lane_params_t {
  uint16_t csi_lane_assign;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint8_t csi_lane_mask;
  uint8_t csi_if;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint8_t csid_core[2];
  uint8_t csi_phy_sel;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 struct msm_sensor_info_t {
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  char sensor_name[MAX_SENSOR_NAME];
  int32_t session_id;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  int32_t subdev_id[SUB_MODULE_MAX];
 };
+struct msm_sensor_ois_info_t {
+ char ois_provider[MAX_SENSOR_NAME];
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ int16_t gyro[2];
+ int16_t target[2];
+ int16_t hall[2];
+ uint8_t is_stable;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+};
+enum ois_mode_t {
+ OIS_MODE_PREVIEW_CAPTURE,
+ OIS_MODE_VIDEO,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ OIS_MODE_CAPTURE,
+ OIS_MODE_CENTERING_ONLY,
+ OIS_MODE_CENTERING_OFF
+};
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+enum ois_ver_t {
+ OIS_VER_RELEASE,
+ OIS_VER_CALIBRATION,
+ OIS_VER_DEBUG
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+};
 struct camera_vreg_t {
  const char *reg_name;
  enum camera_vreg_type type;
- int min_voltage;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ int min_voltage;
  int max_voltage;
  int op_mode;
  uint32_t delay;
-};
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+};
 enum camb_position_t {
  BACK_CAMERA_B,
  FRONT_CAMERA_B,
-};
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+};
 enum camerab_mode_t {
  CAMERA_MODE_2D_B = (1<<0),
  CAMERA_MODE_3D_B = (1<<1)
-};
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+};
 struct msm_sensor_init_params {
  int modes_supported;
  enum camb_position_t position;
- uint32_t sensor_mount_angle;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ uint32_t sensor_mount_angle;
+ int ois_supported;
 };
 struct sensorb_cfg_data {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  int cfgtype;
  union {
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  struct msm_sensor_info_t sensor_info;
  struct msm_sensor_init_params sensor_init_params;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ struct msm_sensor_ois_info_t ois_info;
  void *setting;
  } cfg;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct csid_cfg_data {
  enum csid_cfg_type_t cfgtype;
  union {
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint32_t csid_version;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  struct msm_camera_csid_params *csid_params;
  } cfg;
 };
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct csiphy_cfg_data {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  enum csiphy_cfg_type_t cfgtype;
  union {
  struct msm_camera_csiphy_params *csiphy_params;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  struct msm_camera_csi_lane_params *csi_lane_params;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  } cfg;
 };
 enum eeprom_cfg_type_t {
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  CFG_EEPROM_GET_INFO,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  CFG_EEPROM_GET_CAL_DATA,
  CFG_EEPROM_READ_CAL_DATA,
  CFG_EEPROM_WRITE_DATA,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct eeprom_get_t {
  uint16_t num_bytes;
 };
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct eeprom_read_t {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint8_t *dbuffer;
  uint16_t num_bytes;
 };
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct eeprom_write_t {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  uint8_t *dbuffer;
  uint16_t num_bytes;
 };
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct msm_eeprom_cfg_data {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  enum eeprom_cfg_type_t cfgtype;
  uint8_t is_supported;
  union {
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  char eeprom_name[MAX_SENSOR_NAME];
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  struct eeprom_get_t get_data;
  struct eeprom_read_t read_data;
  struct eeprom_write_t write_data;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  } cfg;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 enum msm_sensor_cfg_type_t {
  CFG_SET_SLAVE_INFO,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  CFG_SLAVE_READ_I2C,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  CFG_WRITE_I2C_ARRAY,
  CFG_SLAVE_WRITE_I2C_ARRAY,
  CFG_WRITE_I2C_SEQ_ARRAY,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  CFG_POWER_UP,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  CFG_POWER_DOWN,
  CFG_SET_STOP_STREAM_SETTING,
  CFG_GET_SENSOR_INFO,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  CFG_GET_SENSOR_INIT_PARAMS,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  CFG_SET_INIT_SETTING,
  CFG_SET_RESOLUTION,
  CFG_SET_STOP_STREAM,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  CFG_SET_START_STREAM,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ CFG_OIS_ON,
+ CFG_OIS_OFF,
+ CFG_GET_OIS_INFO,
+ CFG_SET_OIS_MODE,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ CFG_OIS_MOVE_LENS
 };
 enum msm_actuator_cfg_type_t {
  CFG_GET_ACTUATOR_INFO,
@@ -433,116 +468,118 @@ struct msm_actuator_move_params_t {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  int16_t dest_step_pos;
  int32_t num_steps;
+ int32_t num_steps_inf_pos;
  struct damping_params_t *ringing_params;
-};
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+};
 struct msm_actuator_tuning_params_t {
  int16_t initial_code;
  uint16_t pwd_step;
- uint16_t region_size;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ uint16_t region_size;
  uint32_t total_steps;
  struct region_params_t *region_params;
 };
-struct msm_actuator_params_t {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+struct msm_actuator_params_t {
  enum actuator_type act_type;
  uint8_t reg_tbl_size;
  uint16_t data_size;
- uint16_t init_setting_size;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ uint16_t init_setting_size;
  uint32_t i2c_addr;
  enum msm_actuator_addr_type i2c_addr_type;
  enum msm_actuator_data_type i2c_data_type;
- struct msm_actuator_reg_params_t *reg_tbl_params;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ struct msm_actuator_reg_params_t *reg_tbl_params;
  struct reg_settings_t *init_settings;
 };
 struct msm_actuator_set_info_t {
- struct msm_actuator_params_t actuator_params;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ struct msm_actuator_params_t actuator_params;
  struct msm_actuator_tuning_params_t af_tuning_params;
 };
 struct msm_actuator_get_info_t {
- uint32_t focal_length_num;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ uint32_t focal_length_num;
  uint32_t focal_length_den;
  uint32_t f_number_num;
  uint32_t f_number_den;
- uint32_t f_pix_num;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ uint32_t f_pix_num;
  uint32_t f_pix_den;
  uint32_t total_f_dist_num;
  uint32_t total_f_dist_den;
- uint32_t hor_view_angle_num;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ uint32_t hor_view_angle_num;
  uint32_t hor_view_angle_den;
  uint32_t ver_view_angle_num;
  uint32_t ver_view_angle_den;
-};
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+};
 enum af_camera_name {
  ACTUATOR_MAIN_CAM_0,
  ACTUATOR_MAIN_CAM_1,
- ACTUATOR_MAIN_CAM_2,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ ACTUATOR_MAIN_CAM_2,
  ACTUATOR_MAIN_CAM_3,
  ACTUATOR_MAIN_CAM_4,
  ACTUATOR_MAIN_CAM_5,
- ACTUATOR_WEB_CAM_0,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ ACTUATOR_WEB_CAM_0,
  ACTUATOR_WEB_CAM_1,
  ACTUATOR_WEB_CAM_2,
 };
-struct msm_actuator_cfg_data {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+struct msm_actuator_cfg_data {
  int cfgtype;
  uint8_t is_af_supported;
  union {
- struct msm_actuator_move_params_t move;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ struct msm_actuator_move_params_t move;
  struct msm_actuator_set_info_t set_info;
  struct msm_actuator_get_info_t get_info;
  enum af_camera_name cam_name;
- } cfg;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ } cfg;
 };
 enum msm_actuator_write_type {
  MSM_ACTUATOR_WRITE_HW_DAMP,
- MSM_ACTUATOR_WRITE_DAC,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ MSM_ACTUATOR_WRITE_DAC,
 };
 struct msm_actuator_reg_params_t {
  enum msm_actuator_write_type reg_write_type;
- uint32_t hw_mask;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ uint32_t hw_mask;
  uint16_t reg_addr;
  uint16_t hw_shift;
  uint16_t data_shift;
-};
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+};
 enum msm_camera_led_config_t {
  MSM_CAMERA_LED_OFF,
  MSM_CAMERA_LED_LOW,
- MSM_CAMERA_LED_HIGH,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ MSM_CAMERA_LED_HIGH,
  MSM_CAMERA_LED_INIT,
  MSM_CAMERA_LED_RELEASE,
 };
-struct msm_camera_led_cfg_t {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+struct msm_camera_led_cfg_t {
  enum msm_camera_led_config_t cfgtype;
 };
 #define VIDIOC_MSM_SENSOR_CFG   _IOWR('V', BASE_VIDIOC_PRIVATE + 1, struct sensorb_cfg_data)
-#define VIDIOC_MSM_SENSOR_RELEASE   _IO('V', BASE_VIDIOC_PRIVATE + 2)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define VIDIOC_MSM_SENSOR_RELEASE   _IO('V', BASE_VIDIOC_PRIVATE + 2)
 #define VIDIOC_MSM_SENSOR_GET_SUBDEV_ID   _IOWR('V', BASE_VIDIOC_PRIVATE + 3, uint32_t)
 #define VIDIOC_MSM_CSIPHY_IO_CFG   _IOWR('V', BASE_VIDIOC_PRIVATE + 4, struct csid_cfg_data)
 #define VIDIOC_MSM_CSID_IO_CFG   _IOWR('V', BASE_VIDIOC_PRIVATE + 5, struct csiphy_cfg_data)
-#define VIDIOC_MSM_ACTUATOR_CFG   _IOWR('V', BASE_VIDIOC_PRIVATE + 6, struct msm_actuator_cfg_data)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define VIDIOC_MSM_ACTUATOR_CFG   _IOWR('V', BASE_VIDIOC_PRIVATE + 6, struct msm_actuator_cfg_data)
 #define VIDIOC_MSM_FLASH_LED_DATA_CFG   _IOWR('V', BASE_VIDIOC_PRIVATE + 7, struct msm_camera_led_cfg_t)
 #define VIDIOC_MSM_EEPROM_CFG   _IOWR('V', BASE_VIDIOC_PRIVATE + 8, struct msm_eeprom_cfg_data)
 #define MSM_V4L2_PIX_FMT_META v4l2_fourcc('M', 'E', 'T', 'A')
-#endif
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#endif
+
