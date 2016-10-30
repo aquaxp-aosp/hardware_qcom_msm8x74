@@ -384,7 +384,7 @@ struct venc_capability{
  unsigned char dvs;
 };
 struct venc_entropycfg{
- unsigned longentropysel;
+ unsigned long entropysel;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  unsigned long cabacmodel;
 };
